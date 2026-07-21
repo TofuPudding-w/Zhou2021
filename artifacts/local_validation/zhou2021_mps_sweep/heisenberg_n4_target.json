@@ -1,0 +1,20 @@
+{
+  "bond_dimensions": [
+    1,
+    2,
+    4,
+    2,
+    1
+  ],
+  "discarded_weight": 0.0,
+  "ground_energy": -1.6160254037844388,
+  "ground_residual": 3.688067600459205e-16,
+  "model": "heisenberg",
+  "mps_semantic_sha256": "72b25bb43601cd7e36d95cbb4702597da2e6bd265910b1bdb9f534e05bf8bd7b",
+  "n_qubits": 4,
+  "output": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\local_validation\\zhou2021_mps_sweep\\heisenberg_n4_target.npz",
+  "output_sha256": "2579852b84cb9169921d0b22909fa5cb5fd2f3292bd8b5126d82e48d21335614",
+  "schema_version": "zhou2021-dense-target-export-v1",
+  "scope": "small-N ED/TT-SVD cross-validation target; not the paper-scale DMRG path",
+  "status": "completed"
+}

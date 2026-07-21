@@ -1,0 +1,10 @@
+{
+  "schema_version": "zhou2021-paper-source-v1",
+  "title": "Automatically Differentiable Quantum Circuit for Many-qubit State Preparation",
+  "authors": ["Peng-Fei Zhou", "Rui Hong", "Shi-Ju Ran"],
+  "arxiv": "2104.14949v1",
+  "doi": "10.1103/PhysRevA.104.042601",
+  "local_path": "D:/Jupyter Notebook/TN-Diff/参考文献/Zhou - 2021 - Automatically differentiable quantum circuit for m.pdf",
+  "sha256": "27484ae27d332a3ed9f4ee9c36a30b21826584373f340fa4534f226891e0d76d",
+  "scope": "The local copy is the five-page arXiv v1 preprint. The published PRA article is longer; algorithmic claims are frozen to the cited equations and figures in the local source."
+}

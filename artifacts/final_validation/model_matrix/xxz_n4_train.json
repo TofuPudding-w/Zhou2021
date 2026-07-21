@@ -1,0 +1,347 @@
+{
+  "algorithm": {
+    "config": {
+      "max_bond_dimension": 4,
+      "singular_value_cutoff": 0.0,
+      "training": {
+        "adam_amsgrad": false,
+        "adam_betas": [
+          0.9,
+          0.999
+        ],
+        "adam_eps": 1e-08,
+        "adam_weight_decay": 0.0,
+        "convergence_nlf": null,
+        "epochs_per_stage": 3,
+        "first_layer_initialization": "random",
+        "learning_rate": 0.02,
+        "learning_rate_decay": 1.0,
+        "loss_floor_squared_fidelity": 1e-30,
+        "max_layers": 2,
+        "new_layer_perturbation": 0.001,
+        "seed": 2021
+      },
+      "unitary_atol": 1e-11
+    },
+    "converged": false,
+    "final_num_layers": 2,
+    "gates_per_layer": 3,
+    "mps_bond_upper_bound": 16,
+    "mps_execution_resource_bound": {
+      "approximation_status": "explicit_bond_cap_or_cutoff",
+      "declared_max_bond_dimension": 4,
+      "effective_storage_bound_bond_dimension": 4,
+      "estimated_raw_complex128_core_bytes": 640,
+      "estimated_raw_complex128_core_elements": 40,
+      "untruncated_staircase_bond_upper_bound": 16
+    },
+    "ordered_u4_gate_count": 6,
+    "paper_matrix_element_count": 96,
+    "real_latent_parameter_count": 192,
+    "stopping_reason": "max_layers_reached"
+  },
+  "ideal_metrics": {
+    "negative_log_fidelity_per_site": 0.022454851660825458,
+    "squared_state_fidelity": 0.835571954403229
+  },
+  "paper_method": {
+    "identifier": "zhou-hong-ran-2021-adqc",
+    "mps_execution": "MPS-native target overlap and serial U(4) execution; any bond cap or singular-value cutoff is a separately declared approximation coordinate.",
+    "strict_paper_component": {
+      "latent_gate": "unconstrained complex 4x4 -> SVD polar U Vh",
+      "loss": "-log(abs(overlap))/N",
+      "optimization": "layerwise warm-start Adam",
+      "topology": "serial 1D nearest-neighbour staircase"
+    }
+  },
+  "physical_metrics": {
+    "available": true,
+    "declared_model": "xxz",
+    "model": {
+      "boundary": "open",
+      "coupling": 1.0,
+      "delta": 0.5,
+      "model": "xxz",
+      "num_qubits": 4,
+      "schema_version": "zhou2021-mps-local-energy-v1",
+      "site_order": "q0-most-significant",
+      "spin_convention": "S=Pauli/2"
+    },
+    "prepared_energy_error_per_site": 0.051485804061564555,
+    "prepared_mps_energy": -1.1501427817588041,
+    "reference_energy_role": "small-N exact-diagonalization ground-state total energy",
+    "reference_total_energy": -1.3560859980050624,
+    "target_energy_error_per_site": 1.1102230246251565e-16,
+    "target_mps_energy": -1.356085998005062
+  },
+  "prepared_mps": {
+    "bond_dimensions": [
+      1,
+      2,
+      4,
+      2,
+      1
+    ],
+    "max_bond_dimension": 4,
+    "num_qubits": 4,
+    "semantic_sha256": "aee7e33df6d721f89832c14554293a31dd0fb80a0d9cb8c524b23b99d30537ec"
+  },
+  "provenance": {
+    "doctor": {
+      "conventions": {
+        "complex_dtype": "complex128",
+        "extensions": [
+          "TFIM",
+          "XXZ",
+          "FakeWashingtonV2 noise"
+        ],
+        "paper_ansatz": "serial nearest-neighbour U(4) staircase; N-1 gates/layer",
+        "paper_loss": "-log(abs(<target|prepared>))/N",
+        "paper_models": [
+          "open-boundary Heisenberg",
+          "open-boundary XY"
+        ],
+        "polar_numerical_rank_rcond": 1.4210854715202004e-14,
+        "polar_rank_deficient_policy": "reject_nonunique_u4_completion",
+        "statevector_order": "q0-most-significant",
+        "two_qubit_local_basis": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ]
+      },
+      "dependencies": {
+        "numpy": "1.24.4",
+        "physics-tenpy": null,
+        "pytest": "7.4.0",
+        "qiskit": "2.2.3",
+        "qiskit-aer": null,
+        "qiskit-ibm-runtime": null,
+        "scipy": "1.17.1",
+        "torch": "2.9.1"
+      },
+      "implementation_version": "0.1.0",
+      "optional_runtime_imports": {
+        "physics_tenpy": {
+          "error": "No module named 'tenpy'",
+          "error_type": "ModuleNotFoundError",
+          "usable": false
+        },
+        "qiskit": {
+          "error": "Qiskit is installed in an invalid environment that has both Qiskit >=1.0 and an earlier version. You should create a new virtual environment, and ensure that you do not mix dependencies between Qiskit <1.0 and >=1.0. Any packages that depend on 'qiskit-terra' are not compatible with Qiskit 1.0 and will need to be updated. Qiskit unfortunately cannot enforce this requirement during environment resolution. See https://qisk.it/packaging-1-0 for more detail.",
+          "error_type": "ImportError",
+          "usable": false
+        },
+        "qiskit_aer": {
+          "error": "No module named 'qiskit_aer'",
+          "error_type": "ModuleNotFoundError",
+          "usable": false
+        },
+        "qiskit_ibm_runtime": {
+          "error": "No module named 'qiskit_ibm_runtime'",
+          "error_type": "ModuleNotFoundError",
+          "usable": false
+        }
+      },
+      "paper_source": {
+        "arxiv": "2104.14949v1",
+        "authors": [
+          "Peng-Fei Zhou",
+          "Rui Hong",
+          "Shi-Ju Ran"
+        ],
+        "doi": "10.1103/PhysRevA.104.042601",
+        "local_path": "D:/Jupyter Notebook/TN-Diff/\u53c2\u8003\u6587\u732e/Zhou - 2021 - Automatically differentiable quantum circuit for m.pdf",
+        "schema_version": "zhou2021-paper-source-v1",
+        "scope": "The local copy is the five-page arXiv v1 preprint. The published PRA article is longer; algorithmic claims are frozen to the cited equations and figures in the local source.",
+        "sha256": "27484ae27d332a3ed9f4ee9c36a30b21826584373f340fa4534f226891e0d76d",
+        "title": "Automatically Differentiable Quantum Circuit for Many-qubit State Preparation"
+      },
+      "platform": "Windows-10-10.0.22631-SP0",
+      "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+      "schema_version": "zhou2021-doctor-v1",
+      "torch": {
+        "cuda_available": false,
+        "default_dtype": "torch.float32"
+      }
+    }
+  },
+  "schema_version": "zhou2021-adqc-mps-run-v1",
+  "stages": [
+    {
+      "final_discarded_weight": 0.0,
+      "final_negative_log_fidelity_per_site": 0.0838854209587771,
+      "final_prepared_max_bond_dimension": 2,
+      "final_squared_fidelity": 0.5111545094408542,
+      "initial_negative_log_fidelity_per_site": 0.21631719057607876,
+      "initial_squared_fidelity": 0.17718914084383625,
+      "num_layers": 1,
+      "update_count": 3,
+      "updates": [
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 0,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.15483506705571254,
+          "negative_log_fidelity_per_site_before": 0.21631719057607876,
+          "prepared_max_bond_dimension_after": 2,
+          "squared_fidelity_after": 0.2897663018852981,
+          "squared_fidelity_before": 0.17718914084383625,
+          "stage": 0
+        },
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 1,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.1126847471016335,
+          "negative_log_fidelity_per_site_before": 0.15483506705571254,
+          "prepared_max_bond_dimension_after": 2,
+          "squared_fidelity_after": 0.40596920305044215,
+          "squared_fidelity_before": 0.2897663018852981,
+          "stage": 0
+        },
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 2,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.0838854209587771,
+          "negative_log_fidelity_per_site_before": 0.1126847471016335,
+          "prepared_max_bond_dimension_after": 2,
+          "squared_fidelity_after": 0.5111545094408542,
+          "squared_fidelity_before": 0.40596920305044215,
+          "stage": 0
+        }
+      ]
+    },
+    {
+      "final_discarded_weight": 0.0,
+      "final_negative_log_fidelity_per_site": 0.022454851660825424,
+      "final_prepared_max_bond_dimension": 4,
+      "final_squared_fidelity": 0.8355719544032292,
+      "initial_negative_log_fidelity_per_site": 0.08391224140849293,
+      "initial_squared_fidelity": 0.5110448460556203,
+      "num_layers": 2,
+      "update_count": 6,
+      "updates": [
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 0,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.06504875198531966,
+          "negative_log_fidelity_per_site_before": 0.08391224140849293,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.5942887207250718,
+          "squared_fidelity_before": 0.5110448460556203,
+          "stage": 1
+        },
+        {
+          "active_layer": 1,
+          "discarded_weight_after": 0.0,
+          "epoch": 0,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.05100291447226869,
+          "negative_log_fidelity_per_site_before": 0.06504875198531966,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.6649633745031375,
+          "squared_fidelity_before": 0.5942887207250718,
+          "stage": 1
+        },
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 1,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.041381857139821385,
+          "negative_log_fidelity_per_site_before": 0.05100291447226869,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.7181657714550828,
+          "squared_fidelity_before": 0.6649633745031375,
+          "stage": 1
+        },
+        {
+          "active_layer": 1,
+          "discarded_weight_after": 0.0,
+          "epoch": 1,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.032425021530919314,
+          "negative_log_fidelity_per_site_before": 0.041381857139821385,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.7715142226808006,
+          "squared_fidelity_before": 0.7181657714550828,
+          "stage": 1
+        },
+        {
+          "active_layer": 0,
+          "discarded_weight_after": 0.0,
+          "epoch": 2,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.028017183953983515,
+          "negative_log_fidelity_per_site_before": 0.032425021530919314,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.7992052587660288,
+          "squared_fidelity_before": 0.7715142226808006,
+          "stage": 1
+        },
+        {
+          "active_layer": 1,
+          "discarded_weight_after": 0.0,
+          "epoch": 2,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.022454851660825424,
+          "negative_log_fidelity_per_site_before": 0.028017183953983515,
+          "prepared_max_bond_dimension_after": 4,
+          "squared_fidelity_after": 0.8355719544032292,
+          "squared_fidelity_before": 0.7992052587660288,
+          "stage": 1
+        }
+      ]
+    }
+  ],
+  "target": {
+    "file_sha256": "382b668ad74b6f7b14c96de5fe1efcb9ac8bc21b2df80c27bbcbca72e79590a6",
+    "metadata": {
+      "energy_reference": {
+        "role": "small-N exact-diagonalization ground-state total energy",
+        "value": -1.3560859980050624
+      },
+      "ground_degeneracy": 1,
+      "ground_energy": -1.3560859980050624,
+      "ground_residual": 2.519034774159985e-16,
+      "hamiltonian": {
+        "coupling": 1.0,
+        "coupling_zz": null,
+        "delta": 0.5,
+        "field_x": null,
+        "model": "xxz"
+      },
+      "model": "xxz",
+      "num_qubits": 4,
+      "schema_version": "zhou2021-dense-ed-mps-target-v1",
+      "source_type": "dense_exact_diagonalization_then_tt_svd",
+      "tt_svd_discarded_weight": 0.0,
+      "tt_svd_retained_ranks": [
+        2,
+        4,
+        2
+      ]
+    },
+    "normalized_target_semantic_sha256": "6b89e6ebbdc18625b051c0b35eec40ea10d6ce4a5a71800ad443a96872e0f3c8",
+    "path": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\final_validation\\model_matrix\\xxz_n4_target.npz",
+    "source_bond_dimensions": [
+      1,
+      2,
+      4,
+      2,
+      1
+    ],
+    "source_norm": 1.0000000000000009,
+    "source_num_qubits": 4,
+    "source_semantic_sha256": "ae214139179e81fc128dabfe9d062d801f52cce0bbb4d61a969b18d6952d5ca6",
+    "source_type": "external_open_boundary_mps_npz"
+  }
+}

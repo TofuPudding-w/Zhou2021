@@ -1,0 +1,19 @@
+{
+  "bond_dimensions": [
+    1,
+    2,
+    2,
+    1
+  ],
+  "discarded_weight": 0.0,
+  "ground_energy": -0.9999999999999998,
+  "ground_residual": 3.885780586188048e-16,
+  "model": "heisenberg",
+  "mps_semantic_sha256": "ef8483f22b214a6acabccefa5ca73295cb29c6e4a07787b651e010a972fcdc9f",
+  "n_qubits": 3,
+  "output": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\cli_smoke\\heisenberg_n3_target.npz",
+  "output_sha256": "6e05fe7c231cad5c3f8b8f4339b954a28481f393084635f1972635bafdf9ed74",
+  "schema_version": "zhou2021-dense-target-export-v1",
+  "scope": "small-N ED/TT-SVD cross-validation target; not the paper-scale DMRG path",
+  "status": "completed"
+}

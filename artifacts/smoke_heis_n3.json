@@ -1,0 +1,168 @@
+{
+  "algorithm": {
+    "config": {
+      "convergence_nlf": null,
+      "epochs_per_stage": 4,
+      "first_layer_initialization": "random",
+      "learning_rate": 0.02,
+      "learning_rate_decay": 1.0,
+      "loss_floor_squared_fidelity": 1e-30,
+      "max_layers": 1,
+      "new_layer_perturbation": 0.001,
+      "seed": 1
+    },
+    "converged": false,
+    "final_num_layers": 1,
+    "gates_per_layer": 2,
+    "mps_bond_upper_bound": 4,
+    "ordered_u4_gate_count": 2,
+    "paper_matrix_element_count": 32,
+    "real_latent_parameter_count": 64,
+    "stopping_reason": "max_layers_reached"
+  },
+  "ideal_metrics": {
+    "energy": -0.4036265104984612,
+    "energy_error": 0.5963734895015386,
+    "energy_error_per_site": 0.1987911631671795,
+    "negative_log_fidelity_per_site": 0.10522330526650031,
+    "prepared_state_sha256": "27fcfa3b87b7ef786b78fc70e950d524ab19c1ff386bc3dd5970279c17f2a09e",
+    "squared_state_fidelity": 0.5318786955098556
+  },
+  "paper_method": {
+    "extensions_present": false,
+    "identifier": "zhou-hong-ran-2021-adqc",
+    "strict_paper_component": {
+      "latent_gate": "unconstrained complex 4x4 -> SVD polar U Vh",
+      "loss": "-log(abs(overlap))/N",
+      "optimization": "layerwise warm-start Adam",
+      "topology": "serial 1D nearest-neighbour staircase"
+    }
+  },
+  "provenance": {
+    "doctor": {
+      "conventions": {
+        "complex_dtype": "complex128",
+        "extensions": [
+          "TFIM",
+          "XXZ",
+          "FakeWashingtonV2 noise"
+        ],
+        "paper_ansatz": "serial nearest-neighbour U(4) staircase; N-1 gates/layer",
+        "paper_loss": "-log(abs(<target|prepared>))/N",
+        "paper_models": [
+          "open-boundary Heisenberg",
+          "open-boundary XY"
+        ],
+        "statevector_order": "q0-most-significant",
+        "two_qubit_local_basis": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ]
+      },
+      "dependencies": {
+        "numpy": "1.24.4",
+        "pytest": "7.4.0",
+        "qiskit": "2.2.3",
+        "qiskit-aer": null,
+        "qiskit-ibm-runtime": null,
+        "scipy": "1.17.1",
+        "torch": "2.9.1"
+      },
+      "implementation_version": "0.1.0",
+      "paper_source": {
+        "arxiv": "2104.14949v1",
+        "authors": [
+          "Peng-Fei Zhou",
+          "Rui Hong",
+          "Shi-Ju Ran"
+        ],
+        "doi": "10.1103/PhysRevA.104.042601",
+        "local_path": "D:/Jupyter Notebook/TN-Diff/\u53c2\u8003\u6587\u732e/Zhou - 2021 - Automatically differentiable quantum circuit for m.pdf",
+        "schema_version": "zhou2021-paper-source-v1",
+        "scope": "The local copy is the five-page arXiv v1 preprint. The published PRA article is longer; algorithmic claims are frozen to the cited equations and figures in the local source.",
+        "sha256": "27484ae27d332a3ed9f4ee9c36a30b21826584373f340fa4534f226891e0d76d",
+        "title": "Automatically Differentiable Quantum Circuit for Many-qubit State Preparation"
+      },
+      "platform": "Windows-10-10.0.22631-SP0",
+      "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+      "schema_version": "zhou2021-doctor-v1",
+      "torch": {
+        "cuda_available": false,
+        "default_dtype": "torch.float32"
+      }
+    }
+  },
+  "schema_version": "zhou2021-adqc-run-v1",
+  "stages": [
+    {
+      "final_negative_log_fidelity_per_site": 0.10522330526650031,
+      "final_squared_fidelity": 0.5318786955098556,
+      "initial_negative_log_fidelity_per_site": 0.24203870709905909,
+      "initial_squared_fidelity": 0.23404725429169604,
+      "num_layers": 1,
+      "update_count": 4,
+      "updates": [
+        {
+          "active_layer": 0,
+          "epoch": 0,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.1907590497776798,
+          "negative_log_fidelity_per_site_before": 0.24203870709905909,
+          "squared_fidelity_after": 0.31836578222729983,
+          "squared_fidelity_before": 0.23404725429169604,
+          "stage": 0
+        },
+        {
+          "active_layer": 0,
+          "epoch": 1,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.15339750704121216,
+          "negative_log_fidelity_per_site_before": 0.1907590497776798,
+          "squared_fidelity_after": 0.39836562395528746,
+          "squared_fidelity_before": 0.31836578222729983,
+          "stage": 0
+        },
+        {
+          "active_layer": 0,
+          "epoch": 2,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.1258190840414539,
+          "negative_log_fidelity_per_site_before": 0.15339750704121216,
+          "squared_fidelity_after": 0.47005080035897817,
+          "squared_fidelity_before": 0.39836562395528746,
+          "stage": 0
+        },
+        {
+          "active_layer": 0,
+          "epoch": 3,
+          "learning_rate": 0.02,
+          "negative_log_fidelity_per_site_after": 0.10522330526650031,
+          "negative_log_fidelity_per_site_before": 0.1258190840414539,
+          "squared_fidelity_after": 0.5318786955098556,
+          "squared_fidelity_before": 0.47005080035897817,
+          "stage": 0
+        }
+      ]
+    }
+  ],
+  "target": {
+    "boundary": "open",
+    "ground_degeneracy": 2,
+    "ground_energy": -0.9999999999999998,
+    "ground_gap": 0.9999999999999997,
+    "ground_residual": 3.885780586188048e-16,
+    "ground_selection_basis_index": 1,
+    "hamiltonian_sha256": "e555f5c6e459060d20f974c03b1949d7e03b13910ace192a72165ea4449c03a5",
+    "model": "heisenberg",
+    "n_qubits": 3,
+    "parameters": {
+      "coupling": 1.0,
+      "coupling_zz": null,
+      "delta": null,
+      "field_x": null
+    },
+    "target_state_sha256": "af1bff6b41ea62db51664b64e58d5e62702c1ff12f65fc9f086fcdfaf66aeb08"
+  }
+}

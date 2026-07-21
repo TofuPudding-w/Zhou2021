@@ -1,0 +1,279 @@
+{
+  "algorithm": {
+    "depths": [
+      1,
+      2,
+      3
+    ],
+    "gates_per_layer": 3,
+    "mps_execution_resource_bound": {
+      "approximation_status": "explicit_bond_cap_or_cutoff",
+      "declared_max_bond_dimension": 4,
+      "effective_storage_bound_bond_dimension": 4,
+      "estimated_raw_complex128_core_bytes": 640,
+      "estimated_raw_complex128_core_elements": 40,
+      "untruncated_staircase_bond_upper_bound": 64
+    },
+    "num_qubits": 4,
+    "ordered_u4_gate_count_by_depth": {
+      "1": 3,
+      "2": 6,
+      "3": 9
+    },
+    "seed_policy": {
+      "per_seed_execution": "one full warm-start trajectory through max_layers",
+      "seeds": [
+        17,
+        18
+      ],
+      "shared_config_seed_field": "placeholder only; each listed seed replaces training.seed before run"
+    },
+    "shared_config": {
+      "max_bond_dimension": 4,
+      "singular_value_cutoff": 0.0,
+      "training": {
+        "convergence_nlf": null,
+        "epochs_per_stage": 3,
+        "first_layer_initialization": "random",
+        "learning_rate": 0.02,
+        "learning_rate_decay": 0.5,
+        "loss_floor_squared_fidelity": 1e-30,
+        "max_layers": 3,
+        "new_layer_perturbation": 0.001,
+        "seed": 0
+      },
+      "unitary_atol": 1e-11
+    },
+    "target_max_bond_dimension": 4
+  },
+  "paper_method": {
+    "identifier": "zhou-hong-ran-2021-adqc",
+    "strict_paper_component": {
+      "latent_gate": "unconstrained complex 4x4 -> SVD polar U Vh",
+      "loss": "-log(abs(overlap))/N",
+      "optimization": "layerwise warm-start Adam",
+      "topology": "serial 1D nearest-neighbour staircase"
+    },
+    "sweep_scope": "Configured seed ensemble and optimizer coordinates; the article does not provide an author-supplied numerical seed sweep."
+  },
+  "plot": {
+    "file_sha256": "217bfd201a82edd1acda85f2687283a63ec57d8adf7089ee859fee655123e925",
+    "includes_global_squared_fidelity": true,
+    "path": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\local_validation\\zhou2021_mps_sweep\\heisenberg_n4_depth.png"
+  },
+  "provenance": {
+    "doctor": {
+      "conventions": {
+        "complex_dtype": "complex128",
+        "extensions": [
+          "TFIM",
+          "XXZ",
+          "FakeWashingtonV2 noise"
+        ],
+        "paper_ansatz": "serial nearest-neighbour U(4) staircase; N-1 gates/layer",
+        "paper_loss": "-log(abs(<target|prepared>))/N",
+        "paper_models": [
+          "open-boundary Heisenberg",
+          "open-boundary XY"
+        ],
+        "statevector_order": "q0-most-significant",
+        "two_qubit_local_basis": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ]
+      },
+      "dependencies": {
+        "numpy": "1.24.4",
+        "physics-tenpy": null,
+        "pytest": "7.4.0",
+        "qiskit": "2.2.3",
+        "qiskit-aer": null,
+        "qiskit-ibm-runtime": null,
+        "scipy": "1.17.1",
+        "torch": "2.9.1"
+      },
+      "implementation_version": "0.1.0",
+      "paper_source": {
+        "arxiv": "2104.14949v1",
+        "authors": [
+          "Peng-Fei Zhou",
+          "Rui Hong",
+          "Shi-Ju Ran"
+        ],
+        "doi": "10.1103/PhysRevA.104.042601",
+        "local_path": "D:/Jupyter Notebook/TN-Diff/\u53c2\u8003\u6587\u732e/Zhou - 2021 - Automatically differentiable quantum circuit for m.pdf",
+        "schema_version": "zhou2021-paper-source-v1",
+        "scope": "The local copy is the five-page arXiv v1 preprint. The published PRA article is longer; algorithmic claims are frozen to the cited equations and figures in the local source.",
+        "sha256": "27484ae27d332a3ed9f4ee9c36a30b21826584373f340fa4534f226891e0d76d",
+        "title": "Automatically Differentiable Quantum Circuit for Many-qubit State Preparation"
+      },
+      "platform": "Windows-10-10.0.22631-SP0",
+      "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+      "schema_version": "zhou2021-doctor-v1",
+      "torch": {
+        "cuda_available": false,
+        "default_dtype": "torch.float32"
+      }
+    }
+  },
+  "runs": [
+    {
+      "converged": false,
+      "depth_records": [
+        {
+          "depth": 1,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.07583375776589035,
+          "final_prepared_max_bond_dimension": 2,
+          "final_squared_fidelity": 0.5451632095275726,
+          "initial_negative_log_fidelity_per_site": 0.20461307444392496,
+          "initial_squared_fidelity": 0.19458141924901873,
+          "seed": 17
+        },
+        {
+          "depth": 2,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.04273753778703208,
+          "final_prepared_max_bond_dimension": 4,
+          "final_squared_fidelity": 0.7104190283244622,
+          "initial_negative_log_fidelity_per_site": 0.0759750515638305,
+          "initial_squared_fidelity": 0.5445473322287471,
+          "seed": 17
+        },
+        {
+          "depth": 3,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.030587281686284915,
+          "final_prepared_max_bond_dimension": 4,
+          "final_squared_fidelity": 0.7829407522410078,
+          "initial_negative_log_fidelity_per_site": 0.04263646198705908,
+          "initial_squared_fidelity": 0.710993710011626,
+          "seed": 17
+        }
+      ],
+      "seed": 17,
+      "stopping_reason": "max_layers_reached"
+    },
+    {
+      "converged": false,
+      "depth_records": [
+        {
+          "depth": 1,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.22933742506229476,
+          "final_prepared_max_bond_dimension": 2,
+          "final_squared_fidelity": 0.1596614887192703,
+          "initial_negative_log_fidelity_per_site": 0.6771432175229166,
+          "initial_squared_fidelity": 0.004439800925317791,
+          "seed": 18
+        },
+        {
+          "depth": 2,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.13518951384121008,
+          "final_prepared_max_bond_dimension": 4,
+          "final_squared_fidelity": 0.33908105132332406,
+          "initial_negative_log_fidelity_per_site": 0.22906765591610675,
+          "initial_squared_fidelity": 0.16000643475650353,
+          "seed": 18
+        },
+        {
+          "depth": 3,
+          "final_discarded_weight": 0.0,
+          "final_negative_log_fidelity_per_site": 0.09010188498696037,
+          "final_prepared_max_bond_dimension": 4,
+          "final_squared_fidelity": 0.4863556756262447,
+          "initial_negative_log_fidelity_per_site": 0.13526252180276735,
+          "initial_squared_fidelity": 0.3388830642166142,
+          "seed": 18
+        }
+      ],
+      "seed": 18,
+      "stopping_reason": "max_layers_reached"
+    }
+  ],
+  "schema_version": "zhou2021-adqc-mps-depth-sweep-v1",
+  "status": "completed",
+  "summaries": [
+    {
+      "depth": 1,
+      "mean_discarded_weight": 0.0,
+      "mean_negative_log_fidelity_per_site": 0.15258559141409256,
+      "mean_prepared_max_bond_dimension": 2.0,
+      "mean_squared_fidelity": 0.35241234912342145,
+      "num_seeds": 2,
+      "std_discarded_weight": 0.0,
+      "std_negative_log_fidelity_per_site": 0.0767518336482022,
+      "std_prepared_max_bond_dimension": 0.0,
+      "std_squared_fidelity": 0.19275086040415113
+    },
+    {
+      "depth": 2,
+      "mean_discarded_weight": 0.0,
+      "mean_negative_log_fidelity_per_site": 0.08896352581412108,
+      "mean_prepared_max_bond_dimension": 4.0,
+      "mean_squared_fidelity": 0.5247500398238931,
+      "num_seeds": 2,
+      "std_discarded_weight": 0.0,
+      "std_negative_log_fidelity_per_site": 0.04622598802708901,
+      "std_prepared_max_bond_dimension": 0.0,
+      "std_squared_fidelity": 0.1856689885005691
+    },
+    {
+      "depth": 3,
+      "mean_discarded_weight": 0.0,
+      "mean_negative_log_fidelity_per_site": 0.06034458333662264,
+      "mean_prepared_max_bond_dimension": 4.0,
+      "mean_squared_fidelity": 0.6346482139336262,
+      "num_seeds": 2,
+      "std_discarded_weight": 0.0,
+      "std_negative_log_fidelity_per_site": 0.029757301650337728,
+      "std_prepared_max_bond_dimension": 0.0,
+      "std_squared_fidelity": 0.14829253830738154
+    }
+  ],
+  "target": {
+    "file_sha256": "2579852b84cb9169921d0b22909fa5cb5fd2f3292bd8b5126d82e48d21335614",
+    "metadata": {
+      "energy_reference": {
+        "role": "small-N exact-diagonalization ground-state total energy",
+        "value": -1.6160254037844388
+      },
+      "ground_degeneracy": 1,
+      "ground_energy": -1.6160254037844388,
+      "ground_residual": 3.688067600459205e-16,
+      "hamiltonian": {
+        "coupling": 1.0,
+        "coupling_zz": null,
+        "delta": null,
+        "field_x": null,
+        "model": "heisenberg"
+      },
+      "model": "heisenberg",
+      "num_qubits": 4,
+      "schema_version": "zhou2021-dense-ed-mps-target-v1",
+      "source_type": "dense_exact_diagonalization_then_tt_svd",
+      "tt_svd_discarded_weight": 0.0,
+      "tt_svd_retained_ranks": [
+        2,
+        4,
+        2
+      ]
+    },
+    "normalized_target_semantic_sha256": "0ec72f143b1a2b843b704fe27722416f64de9924eafc24a27a00d6eaaec5f7e6",
+    "path": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\local_validation\\zhou2021_mps_sweep\\heisenberg_n4_target.npz",
+    "source_bond_dimensions": [
+      1,
+      2,
+      4,
+      2,
+      1
+    ],
+    "source_norm": 0.9999999999999994,
+    "source_num_qubits": 4,
+    "source_semantic_sha256": "72b25bb43601cd7e36d95cbb4702597da2e6bd265910b1bdb9f534e05bf8bd7b",
+    "source_type": "external_open_boundary_mps_npz"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "bond_dimensions": [
+    1,
+    2,
+    4,
+    2,
+    1
+  ],
+  "discarded_weight": 0.0,
+  "ground_energy": -1.1180339887498947,
+  "ground_residual": 1.8410966031475738e-16,
+  "model": "xy",
+  "mps_semantic_sha256": "d3592d5be722836b55f3cef4ca752bd03524e8515b07d9edcd08cf7a20737138",
+  "n_qubits": 4,
+  "output": "D:\\pycharm_projects\\Paper_Reproductions\\Zhou_2021\\artifacts\\final_validation\\model_matrix\\xy_n4_target.npz",
+  "output_sha256": "274c04e583a7176b7bff734477ddb5b03758b7cf6f35b8ca7a8087cbd1dfbc26",
+  "schema_version": "zhou2021-dense-target-export-v1",
+  "scope": "small-N ED/TT-SVD cross-validation target; not the paper-scale DMRG path",
+  "status": "completed"
+}
